@@ -1,0 +1,36 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+
+.header_img{
+    height: 100px;
+    width: 30%;
+    margin-left: 33.5%;
+}
+
+
+.among_nav{
+    background-color: rgba(68,75,84, 0.7);
+    height: 50px;
+    text-align: center;
+    margin-top: 1%;
+    padding-top: 1%;
+}
+.among_ul li{
+    display: inline;
+    margin-right: 4%;
+    margin-left: 4%;
+}
+li a{
+    text-decoration: none;
+    color: white;
+    font-family: Berlin Sans FB;
+    font-size: 27px;
+    margin-top: 6%;
+}
+
+li a:focus{
+    opacity: 0.6; 
+}
