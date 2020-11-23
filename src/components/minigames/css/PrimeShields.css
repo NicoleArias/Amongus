@@ -1,0 +1,58 @@
+#container {
+  visibility: visible;
+  width: 909px;
+  height: 909px;
+}
+
+.action {
+  width: 273.5px;
+  height: 238px;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  border: 0;
+  background-color: transparent;
+  padding: 0 0 0 0;
+}
+
+#uno {
+  position: relative;
+  left: 102.4px;
+  top: -705px;
+}
+
+#dos {
+  position: relative;
+  left: 48px;
+  top: -827px;
+}
+
+#tres {
+  position: relative;
+  left: -11.4px;
+  top: -701px;
+}
+
+#cuatro {
+  position: relative;
+  left: 318px;
+  top: -819.5px;
+}
+
+#cinco {
+  position: relative;
+  left: -182.4px;
+  top: -691px;
+}
+
+#seis {
+  position: relative;
+  left: -230px;
+  top: -563px;
+}
+
+#siete {
+  position: relative;
+  left: 537px;
+  top: -931px;
+}
