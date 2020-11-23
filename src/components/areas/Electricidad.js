@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Modal from 'react-modal';
 
-// import '../../styles/electricidad.css';
 
 import electricidad from '../../img/electricidad.png';
 import flecha from '../../img/flecha.png';
@@ -10,6 +10,15 @@ import map_blue from '../../img/Map_blue.jpg';
 import map_x from '../../img/map_x.png';
 
 export const Electricidad = () => {
+
+    const [isOpenModal, setIsOpenModal] = useState(false);
+    const openModal = () => {
+        setIsOpenModal(true);
+    };
+    const closeModal = () => {
+        setIsOpenModal(false);
+    };
+
     return (
         <>
             <div className="among_menu">
@@ -18,7 +27,11 @@ export const Electricidad = () => {
                         <Link to="#"><img src={electricidad} alt="Electricidad"/></Link>
                     </div>
                     <div className="among_ele-img2">
-                        <a href="#miModal"><img src={icono_mapa} /></a>
+                        <button onClick={openModal}><img src={icono_mapa} /></button>
+                        <Modal isOpen={isOpenModal} closeModal={closeModal} className="modal">
+                            <img src={map_x} className="img_modal-x" onClick={closeModal} />
+                            <img src={map_blue} className="img_modal"/>
+                        </Modal>
                     </div>
                     <div className="among_ele-fle2">
                         <Link className="among_ele_tit2" to="/almacen">Almacén</Link><br/>
@@ -29,13 +42,6 @@ export const Electricidad = () => {
                         <Link to="/motor_inferior"><img src={flecha}/></Link>
                     </div>
                 </div>
-            </div>
-
-            <div id="miModal" className="modal">
-                <div className="modal-contenido">
-                    <a href="/electricidad"><img src={map_x} className="img_modal-x"/></a>
-                    <img src={map_blue} className="img_modal"/>
-                </div>  
             </div>
         </>
     )

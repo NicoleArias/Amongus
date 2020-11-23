@@ -1,7 +1,7 @@
-*{
+/* *{
     padding: 0px;
     margin: 0px;
-}
+} */
 #root{
     background-image: url(../img/zzzz.gif);
     background-size: cover;
@@ -103,9 +103,10 @@ li a:focus{
 }
 
 .among_caf-img2 img{
+    cursor: pointer;
     position: absolute;
     height: auto;
-    margin-top: -21.5%;
+    margin-top: -22.5%;
     margin-left: 17.2%;
     width: 3%;
 }
@@ -190,9 +191,10 @@ li a:focus{
 }
 
 .among_ala-img2 img{
+    cursor: pointer;
     position: absolute;
     height: auto;
-    margin-top: -21.5%;
+    margin-top: -22.5%;
     margin-left: 17.2%;
     width: 3%;
 }
@@ -224,11 +226,12 @@ li a:focus{
     margin-top: 12.8%;
 }
 .among_adm-img2 img{
+    cursor: pointer;
     position: absolute;
     height: auto;
-    margin-top: -27.5%;
-    margin-left: 16.2%;
-    width: 4%;
+    margin-top: -28.5%;
+    margin-left: 16.3%;
+    width: 3.7%;
 } 
 
 /* ------------------------------------------------ALMACEN------------------------------------------- */
@@ -272,7 +275,7 @@ li a:focus{
 .among_alm-fle3 img{
     position: absolute;
     margin-left: 7%;
-    margin-top: -32%;
+    margin-top: -33.3%;
     width: 7%;
     height: auto;
     transform: rotate(270deg);
@@ -280,13 +283,14 @@ li a:focus{
 .among_alm_tit3{
     position: absolute;
     margin-left: 7.3%;
-    margin-top: -34%;
+    margin-top: -35%;
 }
 
 .among_alm-img2 img{
+    cursor: pointer;
     position: absolute;
     height: auto;
-    margin-top: -20.2%;
+    margin-top: -21.4%;
     margin-left: 17.2%;
     width: 3%;
 } 
@@ -332,9 +336,10 @@ li a:focus{
 }
 
 .among_arm-img2 img{
+    cursor: pointer;
     position: absolute;
     height: auto;
-    margin-top: -21.4%;
+    margin-top: -22.6%;
     margin-left: 17.2%;
     width: 3%;
 } 
@@ -379,9 +384,10 @@ li a:focus{
 }
 
 .among_com-img2 img{
+    cursor: pointer;
     position: absolute;
     height: auto;
-    margin-top: -21.4%;
+    margin-top: -22.6%;
     margin-left: 17.2%;
     width: 3%;
 } 
@@ -416,7 +422,7 @@ li a:focus{
 .among_ele-fle2 img{
     height: auto;
     position: absolute;
-    margin-top: -2%;
+    margin-top: -3.4%;
     margin-left: -10%;
     transform: rotate(90deg);
     width: 7%;
@@ -424,14 +430,15 @@ li a:focus{
 .among_ele_tit2{
     position: absolute;
     margin-left: -11%;
-    margin-top: 5%;
+    margin-top: 3.5%;
     padding-bottom: 3%;
 }
 
 .among_ele-img2 img{
+    cursor: pointer;
     position: absolute;
     height: auto;
-    margin-top: -21.5%;
+    margin-top: -22.5%;
     margin-left: 17.2%;
     width: 3%;
 } 
@@ -465,7 +472,7 @@ li a:focus{
 .among_esc-fle3 img{
     position: absolute;
     margin-left: -2.5%;
-    margin-top: -31%;
+    margin-top: -32.5%;
     width: 7%;
     height: auto;
     transform: rotate(270deg);
@@ -473,13 +480,14 @@ li a:focus{
 .among_esc_tit3{
     position: absolute;
     margin-left: -2.3%;
-    margin-top: -33%;
+    margin-top: -34.3%;
 }
 
 .among_esc-img2 img{
+    cursor: pointer;
     position: absolute;
     height: auto;
-    margin-top: -20.2%;
+    margin-top: -21.4%;
     margin-left: 17.1%;
     width: 3%;
 } 
@@ -512,7 +520,7 @@ li a:focus{
 .among_mi-fle3 img{
     position: absolute;
     margin-left: 1%;
-    margin-top: -31%;
+    margin-top: -32.2%;
     width: 7%;
     height: auto;
     transform: rotate(270deg);
@@ -520,13 +528,14 @@ li a:focus{
 .among_mi_tit3{
     position: absolute;
     margin-left: 1%;
-    margin-top: -33%;
+    margin-top: -34%;
 }
 
 .among_mi-img2 img{
+    cursor: pointer;
     position: absolute;
     height: auto;
-    margin-top: -20.3%;
+    margin-top: -21.3%;
     margin-left: 17.2%;
     width: 3%;
 } 
@@ -572,9 +581,10 @@ li a:focus{
 }
 
 .among_ms-img2 img{
+    cursor: pointer;
     position: absolute;
     height: auto;
-    margin-top: -21.5%;
+    margin-top: -22.5%;
     margin-left: 17.2%;
     width: 3%;
 } 
@@ -607,46 +617,122 @@ li a:focus{
 }
 
 .among_nave-img2 img{
+    cursor: pointer;
     position: absolute;
     height: auto;
-    margin-top: -26.4%;
+    margin-top: -27.4%;
     margin-left: 16.5%;
     width: 3.7%;
 } 
 
 /* -----------------------------------------------REACTOR----------------------------------------------- */
 
-.among_rea-img img{
+.among_rea-img1{
+    width: 44.8%;
+    height: auto;
+    margin-bottom: -2.2%;
+    margin-left: -0.3%;
+    /* margin: 15px; */
+}
+.among_rea-img2{
     width: 45%;
     height: auto;
     margin: 15px;
 }
-.among_rea-img img:hover{
-    border: 1px solid white;
+.rea_t1{
+    margin-top: 12.5%;
+    margin-left: -23.8%;
+    position: absolute;
+    width: 3%;
 }
+.rea_t2{
+    margin-top: -1.5%;
+    margin-left: -27%;
+    position: absolute;
+    width: 2.5%;
+}
+.rea_t1:hover{
+    border: solid yellow;
+}
+/* .among_rea-img:hover{
+    border: 1px solid white;
+} */
 .among_rea{
     text-align: center;
 }
 .among_rea-fle3 img{
     position: absolute;
     margin-left: 20%;
-    margin-top: -19%;
+    margin-top: -23%;
     width: 7%;
     height: auto;
 }
 .among_rea_tit3{
     position: absolute;
     margin-left: 27%;
-    margin-top: -16.5%;
+    margin-top: -20.5%;
 }
 
 .among_rea-img2 img{
+    cursor: pointer;
     position: absolute;
     height: auto;
-    margin-top: -28.5%;
-    margin-left: 16.2%;
+    margin-top: -45%;
+    margin-left: 39%;
     width: 3.5%;
 } 
+
+/* -------MODAL 2------- */
+
+.modal2{
+    background-color: rgba(0,0,0,.8);
+    position:fixed;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    opacity:0;
+    pointer-events:none;
+}
+#miModalT:target{
+    opacity: 1;
+    pointer-events:auto;
+}
+.img_modal2-x{
+    height: 35px;
+    position: absolute;
+    margin-top: 17%;
+    margin-left: 35.5%;
+    width: 3%;
+}
+
+
+.content_img{
+    height: 123px;
+    margin-left: 39.4%;
+    margin-top: 17%;
+    width: 22%;
+}
+.content div{
+    color: #334574;
+    font-size: 20px;
+}
+table {
+    /* height: 68px; */
+    background-color: #8FA1D0;
+    position: absolute;
+    margin: -8.3% 3% 3% 41.5%;
+    width: 18%;
+}
+
+th {
+    height: 35px;
+    border: solid #0B3DBA;
+    cursor: pointer;
+    outline: none;
+    text-align: center;
+    width: 3%;
+}
 
 /* -----------------------------------------------SEGURIDAD--------------------------------------- */
 
@@ -677,9 +763,10 @@ li a:focus{
 }
 
 .among_seg-img2 img{
+    cursor: pointer;
     position: absolute;
     height: auto;
-    margin-top: -26.4%;
+    margin-top: -27.4%;
     margin-left: 16.5%;
     width: 3.6%;
 } 
@@ -725,9 +812,10 @@ li a:focus{
 }
 
 .among_o2-img2 img{
+    cursor: pointer;
     position: absolute;
     height: auto;
-    margin-top: -27.5%;
+    margin-top: -28.5%;
     margin-left: 16.2%;
     width: 3.5%;
 } 
@@ -937,29 +1025,32 @@ li a:focus{
     position: relative;
 }
 .modal{
-    background-color: rgba(0,0,0,.8);
-    position:fixed;
-    top:0;
-    right:0;
-    bottom:0;
-    left:0;
-    opacity:0;
-    pointer-events:none;
+    background-color: rgba(0, 0, 0, 0.8);
+    /* position:fixed; */
+    /* top:0; */
+    /* right:0; */
+    /* bottom:0; */
+    /* left:0; */
+    /* opacity:0; */
+    /* pointer-events:none; */
+    /* width: 40%; */
 }
 #miModal:target{
     opacity: 1;
     pointer-events:auto;
 }
 .img_modal-x{
+    cursor: pointer;
     height: auto;
     position: absolute;
-    margin-top: -25.5%;
-    margin-left: -13%;
-    width: 7%;
+    margin-top: 12.3%;
+    margin-left: 27.9%;
+    width: 2.5%;
 }
 .img_modal{
     height: auto;
-    margin-top: -35%;
-    margin-left: -22%;
-    width: 150%;
+    margin-top: 10%;
+    margin-left: 25.5%;
+    margin-bottom: 15%;
+    width: 48%;
 }

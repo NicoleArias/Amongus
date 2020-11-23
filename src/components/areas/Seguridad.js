@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Modal from 'react-modal';
 
-import '../../styles/index.css';
 
 import seguridad from '../../img/seguridad.png'
 import flecha from '../../img/flecha.png';
@@ -10,6 +10,15 @@ import map_blue from '../../img/Map_blue.jpg';
 import map_x from '../../img/map_x.png';
 
 export const Seguridad = () => {
+
+    const [isOpenModal, setIsOpenModal] = useState(false);
+    const openModal = () => {
+        setIsOpenModal(true);
+    };
+    const closeModal = () => {
+        setIsOpenModal(false);
+    };
+
     return (
         <>
             <div className="among_menu">
@@ -22,16 +31,13 @@ export const Seguridad = () => {
                         <Link to="#"><img src={seguridad} alt="Seguridad" /></Link>
                     </div>
                     <div className="among_seg-img2">
-                        <a href="#miModal"><img src={icono_mapa} /></a>
+                        <button onClick={openModal}><img src={icono_mapa} /></button>
+                        <Modal isOpen={isOpenModal} closeModal={closeModal} className="modal">
+                            <img src={map_x} className="img_modal-x" onClick={closeModal} />
+                            <img src={map_blue} className="img_modal"/>
+                        </Modal>
                     </div>      
                 </div>
-            </div>
-
-            <div id="miModal" className="modal">
-                <div className="modal-contenido">
-                    <a href="/seguridad"><img src={map_x} className="img_modal-x" /></a>
-                    <img src={map_blue} className="img_modal" />
-                </div>  
             </div>
         </>
     )

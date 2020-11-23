@@ -1,37 +1,51 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Modal from 'react-modal';
 
-// import '../../styles/reactor.css';
 
 import flecha from '../../img/flecha.png';
-import reactor from '../../img/reactor.png';
+import reactor from '../../img/reactor2.png';
+import reactor2 from '../../img/reactor1.png';
+import reactor_t1 from '../../img/reactor_t1.png';
+import reactor_t2 from '../../img/reactor_t2.png';
 import icono_mapa from '../../img/icono-mapa.png';
 import map_blue from '../../img/Map_blue.jpg';
 import map_x from '../../img/map_x.png';
 
+// import Unlock_Manifolds_Skeld from '../../img/Unlock_Manifolds_Skeld.png';
+
 export const Reactor = () => {
+
+    const [isOpenModal, setIsOpenModal] = useState(false);
+    const openModal = () => {
+        setIsOpenModal(true);
+    };
+    const closeModal = () => {
+        setIsOpenModal(false);
+    };
+
     return (
         <>
-            <div class="among_menu">
-                <div class="among_rea">
-                    <div class="among_rea-img">
-                        <Link to="#miModalT"><img src={reactor} alt="Reactor" /></Link>
+            <div className="among_menu">
+                <div className="among_rea">
+                    <div className="among_rea-img">
+                        <img src={reactor2} className="among_rea-img1"/><br/>
+                        <img src={reactor} className="among_rea-img2"/>
+                        <img src={reactor_t1} className="rea_t1" />
+                        <img src={reactor_t2} className="rea_t2" />
                     </div>
-                    <div class="among_rea-img2">
-                        <a href="#miModal"><img src={icono_mapa} /></a>
+                    <div className="among_rea-img2">
+                    <button onClick={openModal}><img src={icono_mapa} /></button>
+                        <Modal isOpen={isOpenModal} closeModal={closeModal} className="modal">
+                            <img src={map_x} className="img_modal-x" onClick={closeModal} />
+                            <img src={map_blue} className="img_modal"/>
+                        </Modal>
                     </div>
-                    <div class="among_rea-fle3">
-                        <Link class="among_rea_tit3" to="/pasillo2">Pasillo</Link><br/>
+                    <div className="among_rea-fle3">
+                        <Link className="among_rea_tit3" to="/pasillo2">Pasillo</Link><br/>
                         <Link to="/pasillo2"><img src={flecha} /></Link>
                     </div>
                 </div>
-            </div> 
-
-            <div id="miModal" class="modal">
-                <div class="modal-contenido">
-                    <a href="/reactor"><img src={map_x} class="img_modal-x" /></a>
-                    <img src={map_blue} class="img_modal" />
-                </div>  
             </div>
         </>
     )

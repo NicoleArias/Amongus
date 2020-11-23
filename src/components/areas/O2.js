@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Modal from 'react-modal';
 
-// import '../../styles/O2.css';
 
 import o2 from '../../img/o2.png';
 import flecha from '../../img/flecha.png';
@@ -10,6 +10,15 @@ import map_blue from '../../img/Map_blue.jpg';
 import map_x from '../../img/map_x.png';
 
 export const O2 = () => {
+
+    const [isOpenModal, setIsOpenModal] = useState(false);
+    const openModal = () => {
+        setIsOpenModal(true);
+    };
+    const closeModal = () => {
+        setIsOpenModal(false);
+    };
+
     return (
         <>
             <div class="among_menu">
@@ -22,20 +31,17 @@ export const O2 = () => {
                         <Link to="#"><img src={o2} alt="O2" /></Link>
                     </div>
                     <div class="among_o2-img2">
-                        <a href="#miModal"><img src={icono_mapa} /></a>
+                        <button onClick={openModal}><img src={icono_mapa} /></button>
+                        <Modal isOpen={isOpenModal} closeModal={closeModal} className="modal">
+                            <img src={map_x} className="img_modal-x" onClick={closeModal} />
+                            <img src={map_blue} className="img_modal"/>
+                        </Modal>
                     </div>
                     <div class="among_o2-fle3">
                         <Link class="among_o2_tit3" to="/pasillo3">Pasillo</Link><br/>
                         <Link to="/pasillo3"><img src={flecha} /></Link>
                     </div>
                 </div>
-            </div>
-
-            <div id="miModal" class="modal">
-                <div class="modal-contenido">
-                    <a href="/O2"><img src={map_x} class="img_modal-x" /></a>
-                    <img src={map_blue} class="img_modal" />
-                </div>  
             </div>
         </>
     )

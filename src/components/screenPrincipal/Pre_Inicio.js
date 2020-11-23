@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-// import '../../styles/index.css';
 import among from '../../img/among.png';
 
 export const Pre_Inicio = () => {

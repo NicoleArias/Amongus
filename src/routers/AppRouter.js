@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/index.css';
 
 import {
     BrowserRouter as Router,
@@ -11,7 +12,6 @@ import { Pre_Inicio } from '../components/screenPrincipal/Pre_Inicio';
 import { DashboardRoutes } from '../routers/DashboardRoutes';
 
 
-// import '../styles/index.css';
 
 export const AppRouter = () => {
 
