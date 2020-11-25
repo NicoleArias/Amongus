@@ -1,0 +1,82 @@
+canvas {
+    background-color: #000;
+}
+
+#container {
+    visibility: visible;
+    width: 976px;
+    height: 869px;
+}
+
+.action {
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 43px 58px 60px 45px;
+    background-color:  rgba(164, 180, 224, 1);
+    border-radius: 10px;
+    border: 5px solid rgba(76, 93, 136, 1);
+}
+
+#uno {
+    position: relative;
+    left: 145px;
+    top: -695px;
+}
+
+#dos {
+    position: relative;
+    left: 165px;
+    top: -695px;
+}
+
+#tres {
+    position: relative;
+    left: 185px;
+    top: -695px;
+}
+
+#cuatro {
+    position: relative;
+    left: 205px;
+    top: -695px;
+}
+
+#cinco {
+    position: relative;
+    left: 225px;
+    top: -695px;
+}
+
+#seis {
+    position: relative;
+    left: -465px;
+    top: -540px;
+}
+
+#siete {
+    position: relative;
+    left: -445px;
+    top: -540px;
+}
+
+#ocho {
+    position: relative;
+    left: -425px;
+    top: -540px;
+}
+
+#nueve {
+    position: relative;
+    left: 567px;
+    top: -668px;
+}
+
+#diez {
+    position: relative;
+    left: 590px;
+    top: -668px;
+} 
+
+
+
