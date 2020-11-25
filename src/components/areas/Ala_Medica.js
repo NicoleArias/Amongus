@@ -8,6 +8,8 @@ import medica from '../../img/medica.png';
 import icono_mapa from '../../img/icono-mapa.png';
 import map_blue from '../../img/Map_blue.jpg';
 import map_x from '../../img/map_x.png';
+import use from '../../img/use.png';
+import medical_wing from '../../img/Among-Us-Task-Guide_ES_2.gif';
 
 export const Ala_Medica = () => {
 
@@ -17,6 +19,15 @@ export const Ala_Medica = () => {
     };
     const closeModal = () => {
         setIsOpenModal(false);
+    };
+
+    const [isOpenM, setIsOpenM] = useState(false);
+    const openModal2 = () => {
+        setIsOpenM(true);
+        setTimeout(() => {
+            alert('¡Tarea completada!');
+            setIsOpenM(false);
+        }, 8000);        
     };
 
     return (
@@ -41,7 +52,13 @@ export const Ala_Medica = () => {
                         <Link className="among_ala_tit3" to="/cafeteria">Cafeteria</Link><br/>
                         <Link to="/cafeteria"><img src={flecha} /></Link>
                     </div>
-                    
+                    <div>
+                        <button id="bt_modal" onClick={openModal2}><img src={use} className="use"/></button>
+                        <Modal isOpen={isOpenM} className="modal_2">
+                            {/* <img src={map_x} className="img_modal-x" onClick={closeModal2} /> */}
+                            <img src={medical_wing} className="img_modal2"/>
+                        </Modal>
+                    </div>
                 </div>
             </div>
         </>

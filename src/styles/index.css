@@ -199,6 +199,23 @@ li a:focus{
     width: 3%;
 }
 
+.modal_2{
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.img_modal2{
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 7%;
+    margin-bottom: 5%;
+}
+.use{
+    cursor: pointer;
+    margin-top: -10.7%;
+    margin-left: 15.3%;
+    position: absolute;
+    width: 4.5%;
+}
+
 /* ------------------------------------------------ADMINISTRACION------------------------------------- */
 
 .among_adm-img img{
@@ -1026,18 +1043,6 @@ th {
 }
 .modal{
     background-color: rgba(0, 0, 0, 0.8);
-    /* position:fixed; */
-    /* top:0; */
-    /* right:0; */
-    /* bottom:0; */
-    /* left:0; */
-    /* opacity:0; */
-    /* pointer-events:none; */
-    /* width: 40%; */
-}
-#miModal:target{
-    opacity: 1;
-    pointer-events:auto;
 }
 .img_modal-x{
     cursor: pointer;
