@@ -55,7 +55,6 @@ export const Ala_Medica = () => {
                     <div>
                         <button id="bt_modal" onClick={openModal2}><img src={use} className="use"/></button>
                         <Modal isOpen={isOpenM} className="modal_2">
-                            {/* <img src={map_x} className="img_modal-x" onClick={closeModal2} /> */}
                             <img src={medical_wing} className="img_modal2"/>
                         </Modal>
                     </div>

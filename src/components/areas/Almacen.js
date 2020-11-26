@@ -9,6 +9,8 @@ import flecha from '../../img/flecha.png';
 import icono_mapa from '../../img/icono-mapa.png';
 import map_blue from '../../img/Map_blue.jpg';
 import map_x from '../../img/map_x.png';
+import use from '../../img/use.png';
+import RefuelStation from '../minigames/RefuelStationUno';
 
 export const Almacen = () => {
 
@@ -18,6 +20,14 @@ export const Almacen = () => {
     };
     const closeModal = () => {
         setIsOpenModal(false);
+    };
+
+    const [isOpenM, setIsOpenM] = useState(false);
+    const openModal2 = () => {
+        setIsOpenM(true);
+    };
+    const closeModal2 = () => {
+        setIsOpenM(false);
     };
 
     return (
@@ -46,7 +56,13 @@ export const Almacen = () => {
                         <Link className="among_alm_tit3" to="/pasillo">Pasillo</Link><br/>
                         <Link to="/pasillo"><img src={flecha}/></Link>
                     </div>
-                    
+                    <div>
+                        <button onClick={openModal2}><img src={use} className="use_alm"/></button>
+                        <Modal isOpen={isOpenM}>
+                            <img src={map_x} className="img_modal-xnav" onClick={closeModal2} />
+                            <RefuelStation/>
+                        </Modal>
+                    </div> 
                 </div>
             </div>
         </>

@@ -65,7 +65,7 @@ li a:focus{
 .among_desc_img{
     height: auto;
     margin-top: 110%;
-    margin-left: -220%;
+    margin-left: -219%;
     opacity: 0.5;
     width: 80%;
 }
@@ -311,6 +311,13 @@ li a:focus{
     margin-left: 17.2%;
     width: 3%;
 } 
+.use_alm{
+    cursor: pointer;
+    margin-top: -11%;
+    margin-left: 15.3%;
+    position: absolute;
+    width: 4.5%;
+}
 
 /* ----------------------------------------------------ARMERIA------------------------------------------ */
 
@@ -508,6 +515,13 @@ li a:focus{
     margin-left: 17.1%;
     width: 3%;
 } 
+.use_esc{
+    cursor: pointer;
+    margin-top: -9.5%;
+    margin-left: 15.3%;
+    position: absolute;
+    width: 4.5%;
+}
 
 /* ----------------------------------------------MOTOR INFERIOR------------------------------------- */
 
@@ -641,6 +655,20 @@ li a:focus{
     margin-left: 16.5%;
     width: 3.7%;
 } 
+.img_modal-xnav{
+    cursor: pointer;
+    margin-left: 18%;
+    margin-top: 9%;
+    position: absolute;
+    width: 6%;
+}
+.use_nave{
+    cursor: pointer;
+    margin-top: -10.5%;
+    margin-left: 14%;
+    position: absolute;
+    width: 5.5%;   
+}
 
 /* -----------------------------------------------REACTOR----------------------------------------------- */
 
@@ -662,16 +690,7 @@ li a:focus{
     position: absolute;
     width: 3%;
 }
-.rea_t2{
-    margin-top: -1.5%;
-    margin-left: -27%;
-    position: absolute;
-    width: 2.5%;
-}
-.rea_t1:hover{
-    border: solid yellow;
-}
-/* .among_rea-img:hover{
+/* .among_rea-img2:hover{
     border: 1px solid white;
 } */
 .among_rea{
@@ -694,10 +713,17 @@ li a:focus{
     cursor: pointer;
     position: absolute;
     height: auto;
-    margin-top: -45%;
+    margin-top: -30%;
     margin-left: 39%;
     width: 3.5%;
 } 
+.img_modal-xr{
+    cursor: pointer;
+    margin-left: 20%;
+    margin-top: 5.6%;
+    position: absolute;
+    width: 7%;
+}
 
 /* -------MODAL 2------- */
 
@@ -1035,14 +1061,12 @@ th {
 
 /* ------------------------------------------------------------------- */
 
-.modal-contenido{
-    width: 400px;
-    padding: 10px 20px;
-    margin: 20% auto;
-    position: relative;
-}
 .modal{
     background-color: rgba(0, 0, 0, 0.8);
+}
+.modal2_rea{
+    background-color: rgba(0, 0, 0, 0.8);
+    /* width: 80%; */
 }
 .img_modal-x{
     cursor: pointer;

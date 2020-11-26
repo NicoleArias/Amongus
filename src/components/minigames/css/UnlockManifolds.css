@@ -1,81 +1,115 @@
-canvas {
-    background-color: #000;
+.canvas1 {
+    background-color: transparent;
+    margin-top: 5%;
+    margin-left: 30%;
+    margin-bottom: 13%;
 }
 
-#container {
+#container1 {
     visibility: visible;
-    width: 976px;
-    height: 869px;
+    /* margin-left: -25%; */
 }
 
-.action {
+.action1{
+    /* font-size: 20px; */
     display: inline-block;
     cursor: pointer;
     text-decoration: none;
-    padding: 43px 58px 60px 45px;
-    background-color:  rgba(164, 180, 224, 1);
-    border-radius: 10px;
-    border: 5px solid rgba(76, 93, 136, 1);
+    padding: 43px 38px 30px 25px;
+    background-color:  #8FA1D0;
+    /* border-radius: 10px; */
+    border: 3px solid #0D3CB8;
 }
 
-#uno {
+.fila1{
+    margin-left: 36.4%;
+    margin-top: -42.6%;
+    position: absolute;
+}
+.fila2{
+    margin-top: -36%;
+    margin-left: 36.4%;
+    position: absolute;
+}
+#uno1 {
+    color: #273968;
+    font-size: 20px;
+    height: 25px;
+    margin-right: 8px;
     position: relative;
-    left: 145px;
-    top: -695px;
+    width: 2%;
 }
 
-#dos {
-    position: relative;
-    left: 165px;
-    top: -695px;
+#dos1 {
+    color: #273968;
+    font-size: 20px;
+    height: 25px;
+    margin-right: 8px;
+    width: 2%;
 }
 
-#tres {
-    position: relative;
-    left: 185px;
-    top: -695px;
+#tres1 {
+    color: #273968;
+    font-size: 20px;
+    height: 25px;
+    margin-right: 8px;
+    width: 2%;
 }
 
-#cuatro {
-    position: relative;
-    left: 205px;
-    top: -695px;
+#cuatro1 {
+    color: #273968;
+    font-size: 20px;
+    height: 25px;
+    margin-right: 8px;
+    width: 2%;
 }
 
-#cinco {
-    position: relative;
-    left: 225px;
-    top: -695px;
+#cinco1 {
+    color: #273968;
+    font-size: 20px;
+    height: 25px;
+    margin-right: 8px;
+    width: 2%;
 }
 
-#seis {
-    position: relative;
-    left: -465px;
-    top: -540px;
+#seis1 {
+    color: #273968;
+    font-size: 20px;
+    height: 25px;
+    margin-right: 8px;
+    width: 2%;
 }
 
-#siete {
-    position: relative;
-    left: -445px;
-    top: -540px;
+#siete1 {
+    color: #273968;
+    font-size: 20px;
+    height: 25px;
+    margin-right: 8px;
+    width: 2%;
 }
 
-#ocho {
-    position: relative;
-    left: -425px;
-    top: -540px;
+#ocho1 {
+    color: #273968;
+    font-size: 20px;
+    height: 25px;
+    margin-right: 8px;
+    width: 2%;
 }
 
-#nueve {
-    position: relative;
-    left: 567px;
-    top: -668px;
+#nueve1 {
+    color: #273968;
+    font-size: 20px;
+    height: 25px;
+    margin-right: 8px;
+    width: 2%;
 }
 
-#diez {
-    position: relative;
-    left: 590px;
-    top: -668px;
+#diez1 {
+    color: #273968;
+    font-size: 20px;
+    height: 25px;
+    margin-right: 8px;
+    width: 2%;
 } 
 
 

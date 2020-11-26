@@ -51,7 +51,7 @@ class ChartCourse extends React.Component {
     }
 
     pintarImagenDeFondo(img){
-        this.ctx.drawImage(img, 0,0 ,1116, 666);
+        this.ctx.drawImage(img, 0,0 ,716, 366);
     }
 
     dibujarNave(img, { posX, posY, ancho, alto}){
@@ -179,7 +179,7 @@ class ChartCourse extends React.Component {
         <React.Fragment>
             <div id="container">
                 <canvas ref={this.canvas} onMouseDown={ this.handleClickDown } onMouseMove={ this.handleClickMove } 
-                onMouseUp={ this.handleClickUp } height="666" width="1116" />
+                onMouseUp={ this.handleClickUp } height="366" width="716" />
             </div>
         </React.Fragment>
         );

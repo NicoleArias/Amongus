@@ -8,6 +8,9 @@ import flecha from '../../img/flecha.png';
 import icono_mapa from '../../img/icono-mapa.png';
 import map_blue from '../../img/Map_blue.jpg';
 import map_x from '../../img/map_x.png';
+import use from '../../img/use.png';
+
+import PrimeShields from '../minigames/PrimeShields';
 
 export const Escudos = () => {
 
@@ -19,9 +22,17 @@ export const Escudos = () => {
         setIsOpenModal(false);
     };
 
+    const [isOpenM, setIsOpenM] = useState(false);
+    const openModal2 = () => {
+        setIsOpenM(true);
+    };
+    const closeModal2 = () => {
+        setIsOpenM(false);
+    };
+
     return (
         <>
-            <div className="among_menu">
+            <div className="among_menu"> 
                 <div className="among_esc">
                     <div className="among_esc-fle2">
                         <Link className="among_esc_tit2" to="/comunicaciones">Comunicaciones</Link>
@@ -40,6 +51,13 @@ export const Escudos = () => {
                     <div className="among_esc-fle3">
                         <Link className="among_esc_tit3" to="/pasillo3">Pasillo</Link><br/>
                         <Link to="/pasillo3"><img src={flecha} /></Link>
+                    </div>
+                    <div>
+                        <button onClick={openModal2}><img src={use} className="use_esc"/></button>
+                        <Modal isOpen={isOpenM}>
+                            <img src={map_x} className="img_modal-x" onClick={closeModal2} />
+                            <PrimeShields />
+                        </Modal>
                     </div>
                 </div>
             </div>

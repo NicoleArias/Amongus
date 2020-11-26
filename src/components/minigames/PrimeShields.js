@@ -95,7 +95,7 @@ class PrimeShields extends React.Component {
     }
 
   render() {
-      return (
+      return ( 
         <React.Fragment>
             <div id="container">
                 <canvas ref={this.canvas} height="909" width="909" />

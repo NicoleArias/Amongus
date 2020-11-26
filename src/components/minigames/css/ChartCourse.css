@@ -1,5 +1,7 @@
 #container {
   visibility: visible;
-  width: 1116px;
-  height: 666px;
+  /* width: 1116px;
+  height: 666px; */
+  padding-top: 8.5%;
+  margin-left: 25%;
 }

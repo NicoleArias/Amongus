@@ -48,7 +48,7 @@ class UnlockManifolds extends React.Component {
     }
 
     pintarImagenDeFondo(img, context){
-        this.ctx.drawImage(img, 0,0 ,976, 869);
+        this.ctx.drawImage(img, 0,0 ,500, 466);
     }
 
     setRandomNumber(e) {
@@ -194,18 +194,23 @@ class UnlockManifolds extends React.Component {
   render() {
       return (
         <React.Fragment>
-            <div id="container">
-                <canvas ref={this.canvas} height="869" width="976" />
-                <button className="action" id="uno" ref={this.buttonUno} value onClick={this.handleClick} />
-                <button className="action" id="dos" ref={this.buttonDos} value onClick={this.handleClick} />
-                <button className="action" id="tres" ref={this.buttonTres} value onClick={this.handleClick} />
-                <button className="action" id="cuatro" ref={this.buttonCuatro} value onClick={this.handleClick} />
-                <button className="action" id="cinco" ref={this.buttonCinco} value onClick={this.handleClick} />
-                <button className="action" id="seis" ref={this.buttonSeis} value onClick={this.handleClick} />
-                <button className="action" id="siete" ref={this.buttonSiete} value onClick={this.handleClick} />
-                <button className="action" id="ocho" ref={this.buttonOcho} value onClick={this.handleClick} />
-                <button className="action" id="nueve" ref={this.buttonNueve} value onClick={this.handleClick} />
-                <button className="action" id="diez" ref={this.buttonDiez} value onClick={this.handleClick} />
+            <div id="container1" width="600" height="200">
+                <canvas className="canvas1" ref={this.canvas} height="466" width="500"/>
+                <div className="fila1">
+                    <button className="action1" id="uno1" ref={this.buttonUno} value onClick={this.handleClick} />
+                    <button className="action1" id="dos1" ref={this.buttonDos} value onClick={this.handleClick} />
+                    <button className="action1" id="tres1" ref={this.buttonTres} value onClick={this.handleClick} />
+                    <button className="action1" id="cuatro1" ref={this.buttonCuatro} value onClick={this.handleClick} />
+                    <button className="action1" id="cinco1" ref={this.buttonCinco} value onClick={this.handleClick} />
+                </div>
+                <div className="fila2">
+                   <button className="action1" id="seis1" ref={this.buttonSeis} value onClick={this.handleClick} />
+                    <button className="action1" id="siete1" ref={this.buttonSiete} value onClick={this.handleClick} />
+                    <button className="action1" id="ocho1" ref={this.buttonOcho} value onClick={this.handleClick} />
+                    <button className="action1" id="nueve1" ref={this.buttonNueve} value onClick={this.handleClick} />
+                    <button className="action1" id="diez1" ref={this.buttonDiez} value onClick={this.handleClick} /> 
+                </div>
+                
             </div>
         </React.Fragment>
         );

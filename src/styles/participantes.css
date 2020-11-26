@@ -35,3 +35,20 @@
     font-size: 30px;
     margin-right: 10%;
 }
+.azul{
+    margin-left: 22%;
+}
+.pro_1{
+    margin-left: -5%;
+    margin-top: 11%;
+    position: absolute;
+}
+.pro_2{
+    margin-top: -25%;
+    margin-left: 50%;
+    position: absolute;
+}
+.pro_1 i{
+    margin-left: 10%;
+    width: 100px;
+}
