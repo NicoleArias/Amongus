@@ -69,7 +69,7 @@ export const Reactor = () => {
 
                     <div>
                         <button onClick={openModal3}>Tarea2</button>
-                        <Modal isOpen={isOpenM2} closeModal={closeModal3}>
+                        <Modal isOpen={isOpenM2} closeModal={closeModal3} className="modal">
                             {/* <img src={map_x} className="img_modal-x" onClick={closeModal3} /> */}
                             <PrimeShields />
                         </Modal>
