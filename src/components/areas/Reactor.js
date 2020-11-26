@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Modal from 'react-modal';
 
 import UnlockManifolds from '../minigames/UnlockManifolds';
-import PrimeShields from '../minigames/StartReactor';
+import StartReactor from '../minigames/StartReactor';
 
 import flecha from '../../img/flecha.png';
 import reactor from '../../img/reactor.png';
@@ -69,9 +69,9 @@ export const Reactor = () => {
 
                     <div>
                         <button onClick={openModal3}>Tarea2</button>
-                        <Modal isOpen={isOpenM2} closeModal={closeModal3} className="modal">
+                        <Modal isOpen={isOpenM2} closeModal={closeModal3} shouldCloseOnOverlayClick={false} onRequestClose={closeModal2} className="modal">
                             {/* <img src={map_x} className="img_modal-x" onClick={closeModal3} /> */}
-                            <PrimeShields />
+                            <StartReactor />
                         </Modal>
                     </div>
                 </div>

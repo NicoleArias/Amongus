@@ -97,15 +97,15 @@ class PrimeShields extends React.Component {
   render() {
       return ( 
         <React.Fragment>
-            <div id="container">
+            <div id="container3">
                 <canvas ref={this.canvas} height="909" width="909" />
-                <button className="action" id="uno" ref={this.buttonUno} value onClick={this.handleClick} />
-                <button className="action" id="dos" ref={this.buttonDos} value onClick={this.handleClick} />
-                <button className="action" id="tres" ref={this.buttonTres} value onClick={this.handleClick} />
-                <button className="action" id="cuatro" ref={this.buttonCuatro} value onClick={this.handleClick} />
-                <button className="action" id="cinco" ref={this.buttonCinco} value onClick={this.handleClick} />
-                <button className="action" id="seis" ref={this.buttonSeis} value onClick={this.handleClick} />
-                <button className="action" id="siete" ref={this.buttonSiete} value onClick={this.handleClick} />
+                <button className="action3" id="uno3" ref={this.buttonUno} value onClick={this.handleClick} />
+                <button className="action3" id="dos3" ref={this.buttonDos} value onClick={this.handleClick} />
+                <button className="action3" id="tres3" ref={this.buttonTres} value onClick={this.handleClick} />
+                <button className="action3" id="cuatro3" ref={this.buttonCuatro} value onClick={this.handleClick} />
+                <button className="action3" id="cinco3" ref={this.buttonCinco} value onClick={this.handleClick} />
+                <button className="action3" id="seis3" ref={this.buttonSeis} value onClick={this.handleClick} />
+                <button className="action3" id="siete3" ref={this.buttonSiete} value onClick={this.handleClick} />
             </div>
         </React.Fragment>
         );

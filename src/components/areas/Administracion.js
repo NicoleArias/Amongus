@@ -8,6 +8,7 @@ import flecha from '../../img/flecha.png';
 import icono_mapa from '../../img/icono-mapa.png';
 import map_blue from '../../img/Map_blue.jpg';
 import map_x from '../../img/map_x.png';
+import use from '../../img/use.png';
 
 export const Administracion = () => {
 
@@ -17,6 +18,14 @@ export const Administracion = () => {
     };
     const closeModal = () => {
         setIsOpenModal(false);
+    };
+
+    const [isOpenM, setIsOpenM] = useState(false);
+    const openModal2 = () => {
+        setIsOpenM(true);
+    };
+    const closeModal2 = () => {
+        setIsOpenM(false);
     };
 
     return (
@@ -36,7 +45,14 @@ export const Administracion = () => {
                             <img src={map_x} className="img_modal-x" onClick={closeModal} />
                             <img src={map_blue} className="img_modal"/>
                         </Modal>
-                    </div>          
+                    </div>  
+                    <div>
+                        <button onClick={openModal2}><img src={use} className="use_adm"/></button>
+                        <Modal isOpen={isOpenM} className="modal">
+                            <img src={map_x} className="img_modal-x" onClick={closeModal2} />
+                            sgrge
+                        </Modal>
+                    </div>         
                 </div>
             </div>
         </>

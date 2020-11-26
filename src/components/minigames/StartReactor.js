@@ -1,7 +1,7 @@
 import React from "react";
 import './css/StartReactor.css';
 
-class PrimeShields extends React.Component {
+class StartReactor extends React.Component {
     
     constructor() {
     super(); 
@@ -265,21 +265,21 @@ class PrimeShields extends React.Component {
   render() {
       return (
         <React.Fragment>
-            <div id="container">
+            <div id="container2">
                 <canvas ref={this.canvas} height="680" width="1200" />
-                <button className="action" id="uno" ref={this.buttonUno} value="0" onClick={this.handleClick} />
-                <button className="action" id="dos" ref={this.buttonDos} value="1" onClick={this.handleClick} />
-                <button className="action" id="tres" ref={this.buttonTres} value="2" onClick={this.handleClick} />
-                <button className="action" id="cuatro" ref={this.buttonCuatro} value="3" onClick={this.handleClick} />
-                <button className="action" id="cinco" ref={this.buttonCinco} value="4" onClick={this.handleClick} />
-                <button className="action" id="seis" ref={this.buttonSeis} value="5" onClick={this.handleClick} />
-                <button className="action" id="siete" ref={this.buttonSiete} value="6" onClick={this.handleClick} />
-                <button className="action" id="ocho" ref={this.buttonOcho} value="7" onClick={this.handleClick} />
-                <button className="action" id="nueve" ref={this.buttonNueve} value="8" onClick={this.handleClick} />
+                <button className="action2" id="uno2" ref={this.buttonUno} value="0" onClick={this.handleClick} />
+                <button className="action2" id="dos2" ref={this.buttonDos} value="1" onClick={this.handleClick} />
+                <button className="action2" id="tres2" ref={this.buttonTres} value="2" onClick={this.handleClick} />
+                <button className="action2" id="cuatro2" ref={this.buttonCuatro} value="3" onClick={this.handleClick} />
+                <button className="action2" id="cinco2" ref={this.buttonCinco} value="4" onClick={this.handleClick} />
+                <button className="action2" id="seis2" ref={this.buttonSeis} value="5" onClick={this.handleClick} />
+                <button className="action2" id="siete2" ref={this.buttonSiete} value="6" onClick={this.handleClick} />
+                <button className="action2" id="ocho2" ref={this.buttonOcho} value="7" onClick={this.handleClick} />
+                <button className="action2" id="nueve2" ref={this.buttonNueve} value="8" onClick={this.handleClick} />
             </div>
         </React.Fragment>
         );
     }
 }
 
-export default PrimeShields;
+export default StartReactor;

@@ -2,13 +2,14 @@ canvas {
     background-color: #000;
 }
 
-#container {
+#container2 {
     visibility: visible;
     width: 1200px;
     height: 680px;
+    margin-left: 2%;
 }
 
-.action {
+.action2 {
     display: inline-block;
     cursor: pointer;
     text-decoration: none;
@@ -18,55 +19,55 @@ canvas {
     border: 2px solid transparent;
 }
 
-#uno {
+#uno2 {
     position: relative;
     left: 722px;
     top: -463px;
 }
 
-#dos {
+#dos2 {
     position: relative;
     left: 739px;
     top: -463px;
 }
 
-#tres {
+#tres2 {
     position: relative;
     left: 756px;
     top: -463px;
 }
 
-#cuatro {
+#cuatro2 {
     position: relative;
     left: 401px;
     top: -340px;
 }
 
-#cinco {
+#cinco2 {
     position: relative;
     left: 418px;
     top: -340px;
 }
 
-#seis {
+#seis2 {
     position: relative;
     left: 435px;
     top: -340px;
 }
 
-#siete {
+#siete2 {
     position: relative;
     left: 81px;
     top: -215px;
 }
 
-#ocho {
+#ocho2 {
     position: relative;
     left: 97.5px;
     top: -215px;
 }
 
-#nueve {
+#nueve2 {
     position: relative;
     left: 114px;
     top: -215px;

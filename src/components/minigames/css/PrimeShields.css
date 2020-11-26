@@ -1,10 +1,12 @@
-#container {
+#container3 {
   visibility: visible;
-  width: 909px;
-  height: 909px;
+  /* width: 909px;
+  height: 909px; */
+  padding-top: 1%;
+  margin-left: 27%;
 }
 
-.action {
+.action3 {
   width: 273.5px;
   height: 238px;
   display: inline-block;
@@ -15,43 +17,43 @@
   padding: 0 0 0 0;
 }
 
-#uno {
+#uno3 {
   position: relative;
   left: 102.4px;
   top: -705px;
 }
 
-#dos {
+#dos3 {
   position: relative;
   left: 48px;
   top: -827px;
 }
 
-#tres {
+#tres3 {
   position: relative;
   left: -11.4px;
   top: -701px;
 }
 
-#cuatro {
+#cuatro3 {
   position: relative;
   left: 318px;
   top: -819.5px;
 }
 
-#cinco {
+#cinco3 {
   position: relative;
   left: -182.4px;
   top: -691px;
 }
 
-#seis {
+#seis3 {
   position: relative;
   left: -230px;
   top: -563px;
 }
 
-#siete {
+#siete3 {
   position: relative;
   left: 537px;
   top: -931px;

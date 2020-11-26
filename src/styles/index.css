@@ -206,7 +206,7 @@ li a:focus{
     width: 60%;
     margin-left: 20%;
     margin-top: 7%;
-    margin-bottom: 5%;
+    margin-bottom: 10%;
 }
 .use{
     cursor: pointer;
@@ -250,6 +250,13 @@ li a:focus{
     margin-left: 16.3%;
     width: 3.7%;
 } 
+.use_adm{
+    cursor: pointer;
+    margin-top: -10.9%;
+    margin-left: 13.9%;
+    position: absolute;
+    width: 6%;
+}
 
 /* ------------------------------------------------ALMACEN------------------------------------------- */
 
@@ -719,63 +726,12 @@ li a:focus{
 } 
 .img_modal-xr{
     cursor: pointer;
-    margin-left: 20%;
-    margin-top: 5.6%;
+    margin-left: 29.7%;
+    margin-top: 9%;
     position: absolute;
-    width: 7%;
+    width: 3.5%;
 }
 
-/* -------MODAL 2------- */
-
-.modal2{
-    background-color: rgba(0,0,0,.8);
-    position:fixed;
-    top:0;
-    right:0;
-    bottom:0;
-    left:0;
-    opacity:0;
-    pointer-events:none;
-}
-#miModalT:target{
-    opacity: 1;
-    pointer-events:auto;
-}
-.img_modal2-x{
-    height: 35px;
-    position: absolute;
-    margin-top: 17%;
-    margin-left: 35.5%;
-    width: 3%;
-}
-
-
-.content_img{
-    height: 123px;
-    margin-left: 39.4%;
-    margin-top: 17%;
-    width: 22%;
-}
-.content div{
-    color: #334574;
-    font-size: 20px;
-}
-table {
-    /* height: 68px; */
-    background-color: #8FA1D0;
-    position: absolute;
-    margin: -8.3% 3% 3% 41.5%;
-    width: 18%;
-}
-
-th {
-    height: 35px;
-    border: solid #0B3DBA;
-    cursor: pointer;
-    outline: none;
-    text-align: center;
-    width: 3%;
-}
 
 /* -----------------------------------------------SEGURIDAD--------------------------------------- */
 

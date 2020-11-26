@@ -93,7 +93,7 @@ class RefuelStation extends React.Component {
   render() {
       return (
         <React.Fragment>
-            <div id="container">
+            <div id="container4">
                 <canvas id="game" ref={this.canvas} height="600" width="605" />
                 <button id="butFill" ref={ this.buttonUno } onMouseDown={ this.handleClickDown } onMouseUp={ this.handleClickUp } />
             </div>

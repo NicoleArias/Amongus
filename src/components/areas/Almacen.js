@@ -58,8 +58,8 @@ export const Almacen = () => {
                     </div>
                     <div>
                         <button onClick={openModal2}><img src={use} className="use_alm"/></button>
-                        <Modal isOpen={isOpenM}>
-                            <img src={map_x} className="img_modal-xnav" onClick={closeModal2} />
+                        <Modal isOpen={isOpenM} className="modal">
+                            {/* <img src={map_x} className="img_modal-xnav" onClick={closeModal2} /> */}
                             <RefuelStation/>
                         </Modal>
                     </div> 

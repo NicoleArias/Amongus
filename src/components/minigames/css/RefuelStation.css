@@ -2,10 +2,13 @@ canvas {
     background-color: #000;
 }
 
-#container {
+#container4 {
     visibility: none;
     width: 605px;
     height: 600px;
+    padding-top: 1%;
+    margin-left: 24%;
+    padding-bottom: 3%;
 }
 
 #butFill {

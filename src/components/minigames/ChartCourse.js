@@ -177,7 +177,7 @@ class ChartCourse extends React.Component {
   render() {
       return (
         <React.Fragment>
-            <div id="container">
+            <div id="container5">
                 <canvas ref={this.canvas} onMouseDown={ this.handleClickDown } onMouseMove={ this.handleClickMove } 
                 onMouseUp={ this.handleClickUp } height="666" width="1116" />
             </div>

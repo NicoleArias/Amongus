@@ -8,6 +8,8 @@ import flecha from '../../img/flecha.png';
 import icono_mapa from '../../img/icono-mapa.png';
 import map_blue from '../../img/Map_blue.jpg';
 import map_x from '../../img/map_x.png';
+import use from '../../img/use.png';
+import RefuelStation from '../minigames/RefuelStationDos';
 
 export const Motor_Superior = () => {
 
@@ -17,6 +19,14 @@ export const Motor_Superior = () => {
     };
     const closeModal = () => {
         setIsOpenModal(false);
+    };
+
+    const [isOpenM, setIsOpenM] = useState(false);
+    const openModal2 = () => {
+        setIsOpenM(true);
+    };
+    const closeModal2 = () => {
+        setIsOpenM(false);
     };
 
     return (
@@ -40,6 +50,13 @@ export const Motor_Superior = () => {
                     <div className="among_ms-fle3">
                         <Link className="among_ms_tit3" to="/ala_medica">Ala Medica</Link>
                         <Link to="/ala_medica"><img src={flecha} /></Link>
+                    </div>
+                    <div>
+                        <button onClick={openModal2}><img src={use} className="use_esc"/></button>
+                        <Modal isOpen={isOpenM} className="modal">
+                            {/* <img src={map_x} className="img_modal-x" onClick={closeModal2} /> */}
+                            <RefuelStation />
+                        </Modal>
                     </div>
                 </div>
             </div>
