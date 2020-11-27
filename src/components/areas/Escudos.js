@@ -55,7 +55,7 @@ export const Escudos = () => {
                     <div>
                         <button onClick={openModal2}><img src={use} className="use_esc"/></button>
                         <Modal isOpen={isOpenM} className="modal">
-                            {/* <img src={map_x} className="img_modal-x" onClick={closeModal2} /> */}
+                            <img src={map_x} className="img_modal-xesc" onClick={closeModal2} />
                             <PrimeShields closeModal={closeModal2} />
                         </Modal>
                     </div>

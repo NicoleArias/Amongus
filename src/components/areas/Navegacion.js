@@ -51,7 +51,7 @@ export const Navegacion = () => {
                     <div>
                         <button onClick={openModal2}><img src={use} className="use_nave"/></button>
                         <Modal isOpen={isOpenM} className="modal">
-                            {/* <img src={map_x} className="img_modal-xnav" onClick={closeModal2} /> */}
+                            <img src={map_x} className="img_modal-xnav" onClick={closeModal2} />
                             <ChartCourse />
                         </Modal>
                     </div>    
