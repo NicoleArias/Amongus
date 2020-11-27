@@ -8,7 +8,7 @@ import StartReactor from '../minigames/StartReactor';
 import flecha from '../../img/flecha.png';
 import reactor from '../../img/reactor.png';
 import icono_mapa from '../../img/icono-mapa.png';
-import map_blue from '../../img/Map_blue.jpg';
+import map_blue from '../../img/Map_blue.png';
 import map_x from '../../img/map_x.png';
 
 // import Unlock_Manifolds_Skeld from '../../img/Unlock_Manifolds_Skeld.png';

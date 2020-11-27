@@ -6,7 +6,7 @@ import Modal from 'react-modal';
 import escudos from '../../img/escudos.png';
 import flecha from '../../img/flecha.png';
 import icono_mapa from '../../img/icono-mapa.png';
-import map_blue from '../../img/Map_blue.jpg';
+import map_blue from '../../img/Map_blue.png';
 import map_x from '../../img/map_x.png';
 import use from '../../img/use.png';
 
@@ -56,7 +56,7 @@ export const Escudos = () => {
                         <button onClick={openModal2}><img src={use} className="use_esc"/></button>
                         <Modal isOpen={isOpenM} className="modal">
                             {/* <img src={map_x} className="img_modal-x" onClick={closeModal2} /> */}
-                            <PrimeShields />
+                            <PrimeShields closeModal={closeModal2} />
                         </Modal>
                     </div>
                 </div>

@@ -6,7 +6,7 @@ import Modal from 'react-modal';
 import o2 from '../../img/o2.png';
 import flecha from '../../img/flecha.png';
 import icono_mapa from '../../img/icono-mapa.png';
-import map_blue from '../../img/Map_blue.jpg';
+import map_blue from '../../img/Map_blue.png';
 import map_x from '../../img/map_x.png';
 
 export const O2 = () => {

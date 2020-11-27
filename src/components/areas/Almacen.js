@@ -7,7 +7,7 @@ import Modal from 'react-modal';
 import almacen from '../../img/almacen.png';
 import flecha from '../../img/flecha.png';
 import icono_mapa from '../../img/icono-mapa.png';
-import map_blue from '../../img/Map_blue.jpg';
+import map_blue from '../../img/Map_blue.png';
 import map_x from '../../img/map_x.png';
 import use from '../../img/use.png';
 import RefuelStation from '../minigames/RefuelStationUno';
@@ -60,7 +60,7 @@ export const Almacen = () => {
                         <button onClick={openModal2}><img src={use} className="use_alm"/></button>
                         <Modal isOpen={isOpenM} className="modal">
                             {/* <img src={map_x} className="img_modal-xnav" onClick={closeModal2} /> */}
-                            <RefuelStation/>
+                            <RefuelStation />
                         </Modal>
                     </div> 
                 </div>

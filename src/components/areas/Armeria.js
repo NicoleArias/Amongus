@@ -5,7 +5,7 @@ import Modal from 'react-modal';
 import armeria from '../../img/armeria.png';
 import flecha from '../../img/flecha.png';
 import icono_mapa from '../../img/icono-mapa.png';
-import map_blue from '../../img/Map_blue.jpg';
+import map_blue from '../../img/Map_blue.png';
 import map_x from '../../img/map_x.png';
 
 

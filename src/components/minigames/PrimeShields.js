@@ -85,6 +85,7 @@ class PrimeShields extends React.Component {
             if (this.contPos > 6) {
                 setTimeout(() => {
                     alert("Tarea Completada 😎👌");
+                    
                 }, 100);
             }
         } 

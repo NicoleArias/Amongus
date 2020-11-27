@@ -6,7 +6,7 @@ import Modal from 'react-modal';
 import flecha from '../../img/flecha.png';
 import medica from '../../img/medica.png';
 import icono_mapa from '../../img/icono-mapa.png';
-import map_blue from '../../img/Map_blue.jpg';
+import map_blue from '../../img/Map_blue.png';
 import map_x from '../../img/map_x.png';
 import use from '../../img/use.png';
 import medical_wing from '../../img/Among-Us-Task-Guide_ES_2.gif';
