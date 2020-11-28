@@ -52,7 +52,7 @@ export const Administracion = () => {
                     <div>
                         <button onClick={openModal2}><img src={use} alt="" className="use_adm"/></button>
                         <Modal isOpen={isOpenM} className="modal">
-                            <img src={map_x} alt="" className="img_modal-x" onClick={closeModal2} />
+                            <img src={map_x} alt="" className="img_modal-xadm" onClick={closeModal2} />
                             <SwipeCard />
                         </Modal>
                     </div>         

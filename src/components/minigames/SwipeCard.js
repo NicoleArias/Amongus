@@ -162,7 +162,7 @@ class SwipeCard extends React.Component {
   render() {
       return (
         <React.Fragment>
-            <div id="container">
+            <div id="containerSw">
                 <canvas ref={this.canvas} onMouseDown={ this.handleClickDown } onMouseMove={ this.handleClickMove } 
                 onMouseUp={ this.handleClickUp } height="600" width="900" />
             </div>

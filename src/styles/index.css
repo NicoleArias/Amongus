@@ -258,6 +258,13 @@ li a:focus{
     position: absolute;
     width: 6%;
 }
+.img_modal-xadm{
+    cursor: pointer;
+    position: absolute;
+    margin-top: 2%;
+    margin-left: 7%;
+    width: 6%;
+}
 
 /* ------------------------------------------------ALMACEN------------------------------------------- */
 
