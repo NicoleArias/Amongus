@@ -1,13 +1,22 @@
 import React from "react";
 import './css/RefuelStation.css';
+import entrarMJ from "../../sounds/EntrarMJ.m4a"
+import salirMJ from "../../sounds/SalirMJ.m4a"
+import hitSound from "../../sounds/RefuelStation.m4a"
+import imagenFondo from "../../img/minigames/refuelstation2.png"
 
 class RefuelStation extends React.Component {
     
     constructor() {
     super(); 
     this.canvas = React.createRef();
+    this.ctx = ""
+    this.imagenFondo = "";
+    this.clickSound = ""; 
+
     this.buttonUno = React.createRef();
     this.LIMITE_CARGA = 113;
+    this.interval = null;
     this.refuelStation = {
         posX: 30,
         posY: 486,
@@ -20,8 +29,6 @@ class RefuelStation extends React.Component {
         ancho: -80,
         alto: 68
     }
-    this.interval = null;
-    this.imagenFondo = "https://i.imgur.com/VljZh2G.png";
     }
     
     componentDidMount() {
@@ -29,57 +36,55 @@ class RefuelStation extends React.Component {
     }
 
     refuelStationLogic(){
-        const ctx = this.canvas.current.getContext('2d');
-        ctx.fillStyle = "rgb(201,171,36)";
+        this.ctx = this.canvas.current.getContext('2d');
+        this.ctx.fillStyle = "rgb(201,171,36)";
+        this.clickSound = new Audio(hitSound);
 
-        var imagenFondo = new Image();
-        imagenFondo.src = this.imagenFondo;
-        imagenFondo.onload = () => {
-            this.pintarRectangulo(ctx, this.refuelStation);
-            ctx.save();
-            ctx.rotate(33 * Math.PI / 180);
-            this.pintarRectangulo(ctx, this.miniRefuelStation);
-            ctx.restore();
-            this.pintarImagenDeFondo(ctx, imagenFondo);
+        this.imagenFondo = new Image();
+        this.imagenFondo.src = imagenFondo;
+        this.imagenFondo.onload = () => {
+            this.pintarRectangulo(this.refuelStation);
+            this.pintarMiniRectangulo();
+            this.pintarImagenDeFondo(this.imagenFondo);
         }        
+        this.playSounds(entrarMJ);
     }
 
     handleClickDown = () => {
         this.startTime = new Date();
+        this.clickSound.play();
         this.moverRectangulo(this.refuelStation);
     }
 
     handleClickUp = () => {
         this.endTime = new Date();
+        this.clickSound.pause();
         clearInterval(this.interval);
         this.interval = null;
     }
 
     moverRectangulo(rect){
-        const ctx = this.canvas.current.getContext('2d');
-        ctx.fillStyle = "rgb(201,171,36)";
-        var imagenFondo = new Image();
-        imagenFondo.src = this.imagenFondo;
-
         if(this.interval === null){
             this.interval = setInterval(() => {
                 
                 if(this.estaEnElLimite(rect)){
-                    alert("Tarea completada 😎👌");
+                    this.clickSound.pause();
+                    this.clickSound.currentTime = 0;
                     clearInterval(this.interval);
                     this.interval = null;
+                    this.playSounds(salirMJ);
+                    setTimeout(() => {
+                        alert("Tarea completada 😎👌");
+                    }, 200);
                 }
-    
+                
                 rect.posY -= 0.5;
                 rect.alto += 0.5;
-                this.limpiarTablero(ctx);
-                this.pintarRectangulo(ctx, rect);
-                ctx.save();
+                this.limpiarTablero();
                 this.miniRefuelStation.ancho += 0.1
-                ctx.rotate(33 * Math.PI / 180);
-                this.pintarRectangulo(ctx, this.miniRefuelStation);
-                ctx.restore();
-                this.pintarImagenDeFondo(ctx, imagenFondo);
+                this.pintarRectangulo(rect);
+                this.pintarMiniRectangulo()
+                this.pintarImagenDeFondo(this.imagenFondo);
             }, 1)
         }
         else{
@@ -89,16 +94,28 @@ class RefuelStation extends React.Component {
     
     }
 
-    limpiarTablero(context){
-        context.clearRect(0,0, 605, 600);
-    }
-    
-    pintarRectangulo(context, { posX, posY, ancho, alto}){
-        context.fillRect(posX, posY, ancho, alto);
+    playSounds(sound) {
+        let sounds = new Audio(sound);
+        sounds.play();
     }
 
-    pintarImagenDeFondo(context, img){
-        context.drawImage(img, 0,0 ,605, 600);
+    limpiarTablero(){
+        this.ctx.clearRect(0, 0, this.canvas.current.width, this.canvas.current.height);
+    }
+    
+    pintarRectangulo({ posX, posY, ancho, alto}){
+        this.ctx.fillRect(posX, posY, ancho, alto);
+    }
+
+    pintarMiniRectangulo(){
+        this.ctx.save();
+        this.ctx.rotate(33 * Math.PI / 180);
+        this.pintarRectangulo(this.miniRefuelStation);
+        this.ctx.restore();
+    }
+
+    pintarImagenDeFondo(img){
+        this.ctx.drawImage(img, 0, 0,this.canvas.current.width, this.canvas.current.height);
     }
     
     estaEnElLimite(rect){

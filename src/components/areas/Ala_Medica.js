@@ -10,9 +10,12 @@ import map_blue from '../../img/Map_blue.png';
 import map_x from '../../img/map_x.png';
 import use from '../../img/use.png';
 import medical_wing from '../../img/Among-Us-Task-Guide_ES_2.gif';
+import Sound from "../../sounds/SubmitScan.m4a"
+import entrarMJ from "../../sounds/EntrarMJ.m4a"
+import salirMJ from "../../sounds/SalirMJ.m4a"
 
 export const Ala_Medica = () => {
-
+    let sounds = new Audio(Sound);
     const [isOpenModal, setIsOpenModal] = useState(false);
     const openModal = () => {
         setIsOpenModal(true);
@@ -23,13 +26,23 @@ export const Ala_Medica = () => {
 
     const [isOpenM, setIsOpenM] = useState(false);
     const openModal2 = () => {
+        playSounds(entrarMJ);
         setIsOpenM(true);
+        sounds.play();
         setTimeout(() => {
+            sounds.pause();
+            sounds.currentTime = 0;
             alert('¡Tarea completada!');
+            playSounds(salirMJ);
             setIsOpenM(false);
         }, 8000);        
     };
 
+    const playSounds = (sound) => {
+        let sounds = new Audio(sound);
+        sounds.play();
+    }
+    
     return (
         <>
             <div className="among_menu">

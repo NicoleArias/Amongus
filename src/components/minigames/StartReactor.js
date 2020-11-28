@@ -1,11 +1,27 @@
 import React from "react";
 import './css/StartReactor.css';
+import entrarMJ from "../../sounds/EntrarMJ.m4a"
+import salirMJ from "../../sounds/SalirMJ.m4a"
+import failSound from "../../sounds/StartReactorFail.m4a"
+import hitSound from "../../sounds/StartReactorHit1.m4a"
+import hit2Sound from "../../sounds/StartReactorHit2.m4a"
+import hit3Sound from "../../sounds/StartReactorHit3.m4a"
+import hit4Sound from "../../sounds/StartReactorHit4.m4a"
+import hit5Sound from "../../sounds/StartReactorHit5.m4a"
+import imagenFondo from "../../img/minigames/reactor2.png"
+import imgOrbeVerde from "../../img/minigames/orbe verde.png"
+import imgOrbeRojo from "../../img/minigames/orbe roja.png"
 
 class StartReactor extends React.Component {
     
     constructor() {
     super(); 
     this.canvas = React.createRef();
+    this.ctx = ""
+    this.imagenFondo = "";
+    this.imgOrbeVerde = "";
+    this.imgOrbeRojo = "";
+
     this.buttonUno = React.createRef();
     this.buttonDos = React.createRef();
     this.buttonTres = React.createRef();
@@ -16,16 +32,14 @@ class StartReactor extends React.Component {
     this.buttonOcho = React.createRef();
     this.buttonNueve = React.createRef();
 
+    this.inicio = true;
     this.clicking = false;
     this.secuencia = [];
     this.indSec = 0;
     this.nivel = 1;
     this.increDerArray = 0;
     this.increIzqArray = 1;
-
-    this.imgOrbeVerde = "https://i.imgur.com/ssj9GCl.png";
-    this.imgOrbeRojo = "https://i.imgur.com/Qd0KuYo.png";
-    this.imagenFondo = "https://i.imgur.com/40xaJKe.png";
+    this.sounds = [hitSound, hit2Sound, hit3Sound, hit4Sound, hit5Sound]
 
     this.transparent = 'background-color: transparent;'
     this.gray = 'background-color: rgba(115, 115, 115, 0.65);'
@@ -52,81 +66,79 @@ class StartReactor extends React.Component {
     }
     
     componentDidMount() {
-        this.primeShieldLogic()
+        this.startReactorLogic()
     }
 
-    primeShieldLogic(){
-        const ctx = this.canvas.current.getContext('2d')
-        ctx.fillStyle = "rgb(56,137,210)";
+    startReactorLogic(){
+        this.ctx = this.canvas.current.getContext('2d');
+        this.ctx.fillStyle = "rgb(56,137,210)";
 
-        var imagenFondo = new Image();
-        var imgOrbeVerde = new Image();
-        var imgOrbeRojo = new Image();
-        imagenFondo.src = this.imagenFondo;
-        imgOrbeVerde.src = this.imgOrbeVerde;
-        imgOrbeRojo.src = this.imgOrbeRojo;
-
-        imgOrbeRojo.onload = () => {
-            this.pintarOrbe(ctx, imgOrbeRojo, this.orbesPosXIsq[0], this.orbePos);
+        this.imgOrbeRojo = new Image();
+        this.imgOrbeRojo.src = imgOrbeRojo;
+        this.imgOrbeRojo.onload = () => {
+            this.pintarOrbe(this.imgOrbeRojo, this.orbesPosXIsq[0], this.orbePos);
         }
 
-        imgOrbeVerde.onload = () => {
-            this.pintarOrbe(ctx, imgOrbeVerde, this.orbesPosXIsq[0], this.orbePos);
+        this.imgOrbeVerde = new Image();
+        this.imgOrbeVerde.src = imgOrbeVerde;
+        this.imgOrbeVerde.onload = () => {
+            this.pintarOrbe(this.imgOrbeVerde, this.orbesPosXIsq[0], this.orbePos);
         }
 
-        imagenFondo.onload = () => {
-            this.pintarImagenDeFondo(ctx, imagenFondo);
+        this.imagenFondo = new Image();
+        this.imagenFondo.src = imagenFondo;
+        this.imagenFondo.onload = () => {
+            this.pintarImagenDeFondo(this.imagenFondo);
         } 
-        
+
+        this.playSounds(entrarMJ);
         setTimeout(() => {
-            this.comienzaPartida(ctx); 
-        }, 2000);
+            this.comienzaPartida(); 
+        }, 1500);
     }
 
 
-    limpiarTablero(context){
-        context.clearRect(0,0, 1200, 680);
+    limpiarTablero(){
+        this.ctx.clearRect(0,0, this.canvas.current.width, this.canvas.current.height);
     }
-    pintarImagenDeFondo(context, img){
-        context.drawImage(img, 0,0 ,1200, 680);
+    pintarImagenDeFondo(img){
+        this.ctx.drawImage(img, 0,0 ,this.canvas.current.width, this.canvas.current.height);
     }
 
-    pintarOrbe(context, orbec, posX, {posY, ancho, alto}){
-        context.drawImage(orbec, posX, posY, ancho, alto);
+    pintarOrbe(orbec, posX, {posY, ancho, alto}){
+        this.ctx.drawImage(orbec, posX, posY, ancho, alto);
     }
     
-    pintarRectangulo(context, posX, posY, {ancho, alto}){
-        context.fillRect(posX, posY, ancho, alto);
+    pintarRectangulo(posX, posY, {ancho, alto}){
+        this.ctx.fillRect(posX, posY, ancho, alto);
         setTimeout(() => {
-            this.limpiarTodo(context)
+            this.limpiarTodo()
         }, 500);
     }
     
-    orbePosCorrect(context, limite, orbePosi) {
-        var imgOrbeVerde = new Image();
-        imgOrbeVerde.src = this.imgOrbeVerde;
+    orbePosCorrect(limite, orbePosi) {
         for (let i = 0; i < limite; i++) {
-            this.pintarOrbe(context, imgOrbeVerde, orbePosi[i], this.orbePos);
+            this.pintarOrbe(this.imgOrbeVerde, orbePosi[i], this.orbePos);
         }
     }
 
-    limpiarTodo(context){
-        var imagenFondo = new Image();
-        imagenFondo.src = this.imagenFondo;
-        this.limpiarTablero(context);
-        this.pintarImagenDeFondo(context, imagenFondo);
-        this.orbePosCorrect(context, this.increIzqArray, this.orbesPosXIsq);
+    limpiarTodo(){
+        this.limpiarTablero();
+        this.pintarImagenDeFondo(this.imagenFondo);
+        this.orbePosCorrect(this.increIzqArray, this.orbesPosXIsq);
         this.buttomColor(this.gray);
         this.indSec++;
         setTimeout(() => {
-            this.iniciaSecuencia(context)}
+            this.iniciaSecuencia()}
         , 150);
     }
 
-    comienzaPartida(context) {
-        this.reiValores();
-        this.setRandomNumber();
-        this.iniciaSecuencia(context);
+    comienzaPartida() {
+        if (this.inicio) {
+            this.reiValores();
+            this.setRandomNumber();
+            this.iniciaSecuencia(); 
+        }    
     }
 
     reiValores() {
@@ -141,13 +153,14 @@ class StartReactor extends React.Component {
         this.secuencia.push(parseInt(Math.random() * 9));
     }
 
-    iniciaSecuencia(context){
+    iniciaSecuencia(){
         if(this.indSec < this.secuencia.length){
-            this.pintarRectangulo(context, this.cuadrosPosXeY[this.secuencia[this.indSec]][0], 
+            this.playRandomSoundsHit();
+            this.pintarRectangulo(this.cuadrosPosXeY[this.secuencia[this.indSec]][0], 
                 this.cuadrosPosXeY[this.secuencia[this.indSec]][1], this.cuadroPos);
         }
         else{
-            this.orbePosCorrect(context, this.increDerArray, this.orbesPosXIsq);
+            this.orbePosCorrect(this.increDerArray, this.orbesPosXIsq);
             this.indSec = 0;
             this.buttomColor(this.transparent);
             this.clicking = true;
@@ -176,73 +189,82 @@ class StartReactor extends React.Component {
         }
     }
 
+    playSounds(sound) {
+        let sounds = new Audio(sound);
+        sounds.play();
+    }
+
+    playRandomSoundsHit() {
+        let sound = new Audio(this.sounds[parseInt(Math.random() * 5)]);
+        sound.play();
+    }
+
     hit(numero) {
+        this.playRandomSoundsHit();
         this.arrayNumberButton[numero].current.style.cssText = this.hitColor;
         setTimeout(() => {
             this.arrayNumberButton[numero].current.style.cssText = this.transparent;
-            console.log(numero + "xdxd")
             this.hitOff();
         }, 200);
     }
 
     hitOff() {
-        const ctx = this.canvas.current.getContext('2d')
-        ctx.fillStyle = "rgb(56,137,210)";
-
         this.increDerArray++;
-        this.orbePosCorrect(ctx, this.increDerArray, this.orbesPosXDer)
+        this.orbePosCorrect(this.increDerArray, this.orbesPosXDer)
         this.indSec++;
         if(this.indSec === this.secuencia.length){  
             if (this.nivel === 5) {
-                // this.container.current.style.cssText = ('visibility: hidden;');
-                alert("Tarea Completada 😎👌");
+                this.playSounds(salirMJ);
+                this.inicio = false;
+                setTimeout(() => {
+                    alert("Tarea completada 😎👌");
+                    // this.container.current.style.cssText = ('visibility: hidden;');
+                }, 200);
+                
             }
-            this.nivel++;
-            this.increIzqArray++;
-            this.orbePosCorrect(ctx, this.increIzqArray, this.orbesPosXIsq);
-            this.setRandomNumber();
-            this.increDerArray = 0;
-            this.indDerArray = [];
-            this.indSec = 0;
-            this.buttomColor(this.gray);
-            this.clicking = false;
-            debugger
-            setTimeout(() => {
-                this.iniciaSecuencia(ctx)
-            }, 1000);
+            if (this.inicio ) {
+                this.nivel++;
+                this.increIzqArray++;
+                this.orbePosCorrect(this.increIzqArray, this.orbesPosXIsq);
+                this.setRandomNumber();
+                this.increDerArray = 0;
+                this.indDerArray = [];
+                this.indSec = 0;
+                this.buttomColor(this.gray);
+                this.clicking = false;
+                setTimeout(() => {
+                    this.iniciaSecuencia()
+                }, 1000); 
+            }
+            
         }
     }
 
     fail() {
-        console.log("xdxd")
-        const ctx = this.canvas.current.getContext('2d')
+        this.playSounds(salirMJ);
         this.clicking = false;
-        this.aniFail(ctx);
+        this.playSounds(failSound)
+        this.aniFail();
         setTimeout(() => {
-            this.aniFail(ctx);
+            this.aniFail();
         }, 500);
         setTimeout(() => {
             this.buttomColor(this.gray);
         }, 600);
         setTimeout(() => {
-            this.comienzaPartida(ctx);
+            this.comienzaPartida();
         }, 1400);
     }
 
-    aniFail(context) {
-        var imagenFondo = new Image();
-        imagenFondo.src = this.imagenFondo;
-        var imgOrbeRojo = new Image();
-        imgOrbeRojo.src = this.imgOrbeRojo;
-
+    aniFail() {
         this.orbesPosXDer.forEach(orbes => {
-            this.pintarOrbe(context, imgOrbeRojo, orbes, this.orbePos);
+            this.pintarOrbe(this.imgOrbeRojo, orbes, this.orbePos);
         });
         this.buttomColor(this.failColor)
         setTimeout(() => {
             this.buttomColor(this.transparent)
-            this.limpiarTablero(context);
-            this.pintarImagenDeFondo(context, imagenFondo);
+            this.limpiarTablero();
+            this.pintarImagenDeFondo(this.imagenFondo);
             }, 200);
     }
     

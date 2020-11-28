@@ -1,5 +1,10 @@
 import React from "react";
 import './css/ChartCourse.css';
+import entrarMJ from "../../sounds/EntrarMJ.m4a"
+import salirMJ from "../../sounds/SalirMJ.m4a"
+import hitSound from "../../sounds/ChartCourse.m4a"
+import imagenFondo from "../../img/minigames/ChartCourse.png"
+import nave from "../../img/minigames/NaveXp.png"
 
 class ChartCourse extends React.Component {
     
@@ -9,15 +14,15 @@ class ChartCourse extends React.Component {
     this.ctx = ""
     this.imagenFondo = "";
     this.imagenNave = "";
+
+    this.arrastrar = false;
     this.nivel = 0;
     this.grados = -45;
     this.limiteIzq = -280;
     this.limiteIzqDos = -240;
     this.limiteDer = 30;
     this.limiteDerDos = 200;
-    this.srcImagenNave = "https://i.imgur.com/V62kLgI.png";
-    this.srcImagenFondo = "https://i.imgur.com/AqBMGZm.png";
-    this.arrastrar = false;
+
     this.delta = {
         x: 0,
         y: 0
@@ -33,25 +38,26 @@ class ChartCourse extends React.Component {
     componentDidMount() {
         this.ChartCourseLogic()
     }
-   
+
     ChartCourseLogic(){
         this.ctx = this.canvas.current.getContext('2d');
 
         this.imagenFondo = new Image();
-        this.imagenFondo.src = this.srcImagenFondo;
+        this.imagenFondo.src = imagenFondo;
         this.imagenFondo.onload = () => {
             this.pintarImagenDeFondo(this.imagenFondo);
         }   
 
         this.imagenNave = new Image();
-        this.imagenNave.src = this.srcImagenNave;
+        this.imagenNave.src = nave;
         this.imagenNave.onload = () => {
             this.dibujarNave(this.imagenNave, this.nave);
-        }        
+        }
+        this.playSounds(entrarMJ);
     }
 
     pintarImagenDeFondo(img){
-        this.ctx.drawImage(img, 0,0 ,1116, 666);
+        this.ctx.drawImage(img, 0, 0, this.canvas.current.width, this.canvas.current.height);
     }
 
     dibujarNave(img, { posX, posY, ancho, alto}){
@@ -69,63 +75,44 @@ class ChartCourse extends React.Component {
             y: Math.round(evt.clientY - rect.top)
         };
     }
+    asignarValores(grados, limiteIzq, limiteIzqDos, limiteDer, limiteDerDos, posX, posY){
+        this.grados = grados;
+        this.limiteIzq = limiteIzq;
+        this.limiteIzqDos = limiteIzqDos;
+        this.limiteDer = limiteDer;
+        this.limiteDerDos = limiteDerDos;
+        this.nave.posX = posX
+        this.nave.posY = posY
+        this.clear();
+        this.dibujarNave(this.imagenNave, this.nave);
+    }
 
     cambiarValores(){
         switch (this.nivel) {
             case 0:
-                this.nivel = 0;
-                this.grados = -45;
-                this.limiteIzq = -280;
-                this.limiteIzqDos = -240;
-                this.limiteDer = 30;
-                this.limiteDerDos = 200;
-                this.nave.posX = -239
-                this.nave.posY = 385
-                this.clear();
-                this.dibujarNave(this.imagenNave, this.nave);
+                this.asignarValores( -45, -280, -240, 30, 200, -239, 385);
                 break;
             case 1:
-                this.grados = 38;
-                this.limiteIzq = 340;
-                this.limiteIzqDos = 380;
-                this.limiteDer = 628;
-                this.limiteDerDos = 900;
-                this.nave.posX = 381
-                this.nave.posY = -70
-                this.clear();
-                this.dibujarNave(this.imagenNave, this.nave);
+                this.asignarValores( 38, 340, 380, 628, 900, 381, -70);
                 break;
             case 2:
-                this.grados = -45;
-                this.limiteIzq = 20;
-                this.limiteIzqDos = 60;
-                this.limiteDer = 342;
-                this.limiteDerDos = 525;
-                this.nave.posX = 61
-                this.nave.posY = 635
-                this.clear();
-                this.dibujarNave(this.imagenNave, this.nave);
+                this.asignarValores( -45, 20, 60, 342, 525, 61, 635);
                 break;
             case 3:
-                this.grados = 39;
-                this.limiteIzq = 500;
-                this.limiteIzqDos = 660;
-                this.limiteDer = 915;
-                this.limiteDerDos = 1100;
-                this.nave.posX = 661;
-                this.nave.posY = -355;
-                this.clear();
-                this.dibujarNave(this.imagenNave, this.nave);
+                this.asignarValores( 39, 500, 660, 915, 1100, 661, -355);
                 break;
         
             default:
                 break;
         }
     }
+
+    playSounds(sound) {
+        let sounds = new Audio(sound);
+        sounds.play();
+    }
     
     handleClickDown = (e) => {
-        // this.startTime = new Date();
-        // this.moverRectangulo(this.refuelStation);
         var mousePos = this.oMousePos(e);
             this.arrastrar = true;
             console.log("abajo");
@@ -134,14 +121,13 @@ class ChartCourse extends React.Component {
     }
 
     handleClickMove = (e) => {
-        // this.startTime = new Date();
         if (this.arrastrar) {
             var mousePos = this.oMousePos(e);
 
             if (this.nave.posX >= this.limiteIzq && this.nave.posX <= this.limiteIzqDos) {
                 this.arrastrar = false
                 this.nave.posX = this.limiteIzqDos + 2
-                console.log("limite")
+                console.log("limite izquierdo")
             } else {
                 this.arrastrar = true
                 this.clear();
@@ -150,28 +136,31 @@ class ChartCourse extends React.Component {
                 if (this.nave.posX >= this.limiteDer && this.nave.posX <= this.limiteDerDos) {
                     this.arrastrar = false
                     this.nave.posX = this.limiteDer + 1
+                    this.playSounds(hitSound);
                     if (this.nivel === 3) {
-                        alert("Tarea Completada 😎👌")
+                        this.nave.posX = this.limiteDer + 3
+                        this.playSounds(salirMJ);
+                        setTimeout(() => {
+                            alert("Tarea completada 😎👌");
+                            // window.history.back();
+                        }, 200);
                     }
                     this.nivel++;
-                    console.log("limite xdxd")
+                    console.log("limite derecho")
                 }
             }
         }
     }   
 
     handleClickUp = () => {
-        // this.endTime = new Date();
         this.arrastrar = false;
         this.cambiarValores()
         console.log("arriba");
     }
 
-    // this.ctx.drawImage(this.imagenNave, e.clientX - this.nave.posX, this.nave.posY, this.nave.ancho, this.nave.alto);
     clear(){
-        this.ctx.clearRect(0, 0, 1116, 666);
+        this.ctx.clearRect(0, 0, this.canvas.current.width, this.canvas.current.height);
         this.pintarImagenDeFondo(this.imagenFondo);
-        // this.dibujarNave(this.imagenNave, this.nave);
     }
 
   render() {
