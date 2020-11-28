@@ -10,6 +10,7 @@ canvas {
 }
 
 .action2 {
+    outline: none;
     display: inline-block;
     cursor: pointer;
     text-decoration: none;

@@ -12,6 +12,7 @@ canvas {
 }
 
 #butFill {
+    outline: none;
     display: inline-block;
     cursor: pointer;
     position: relative;
