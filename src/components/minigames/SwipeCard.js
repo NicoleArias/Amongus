@@ -115,7 +115,6 @@ class SwipeCard extends React.Component {
         if (this.arrastrar) {
             var mousePos = this.oMousePos(e);
             if (this.card.posX >= this.limiteIzq && this.card.posX <= this.limiteIzqDos) {
-            this.playSounds(failSound);
                 this.arrastrar = false
                 this.card.posX = 1
                 console.log("limite izquierdo")
@@ -125,7 +124,6 @@ class SwipeCard extends React.Component {
                 console.log(this.card.posX)
                 this.pintarImagenMinijuego(this.imagenFondo1, this.imagenFondo2, this.imagenCard, this.card);
                 if (this.card.posX >= this.limiteDer && this.card.posX <= this.limiteDerDos) {
-                    this.playSounds(failSound);
                     this.arrastrar = false
                     this.card.posX = 15
                     console.log("limite derecho")

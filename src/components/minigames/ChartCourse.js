@@ -15,6 +15,7 @@ class ChartCourse extends React.Component {
     this.imagenFondo = "";
     this.imagenNave = "";
 
+    this.clicking = true;
     this.arrastrar = false;
     this.nivel = 0;
     this.grados = -45;
@@ -113,11 +114,13 @@ class ChartCourse extends React.Component {
     }
     
     handleClickDown = (e) => {
-        var mousePos = this.oMousePos(e);
+        if (this.clicking) {
+            var mousePos = this.oMousePos(e);
             this.arrastrar = true;
             console.log("abajo");
             this.delta.x = this.nave.posX - mousePos.x;
             this.delta.y = this.nave.posY - mousePos.y;
+        }
     }
 
     handleClickMove = (e) => {
@@ -138,11 +141,11 @@ class ChartCourse extends React.Component {
                     this.nave.posX = this.limiteDer + 1
                     this.playSounds(hitSound);
                     if (this.nivel === 3) {
+                        this.clicking = false;
                         this.nave.posX = this.limiteDer + 3
                         this.playSounds(salirMJ);
                         setTimeout(() => {
                             alert("Tarea completada 😎👌");
-                            // window.history.back();
                         }, 200);
                     }
                     this.nivel++;
