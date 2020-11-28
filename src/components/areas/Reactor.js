@@ -11,6 +11,8 @@ import icono_mapa from '../../img/icono-mapa.png';
 import map_blue from '../../img/Map_blue.png';
 import map_x from '../../img/map_x.png';
 
+import reactor_t1 from '../../img/reactor_t1.png';
+import reactor_t2 from '../../img/reactor_t2.png';
 // import Unlock_Manifolds_Skeld from '../../img/Unlock_Manifolds_Skeld.png';
 
 export const Reactor = () => {
@@ -60,7 +62,7 @@ export const Reactor = () => {
                         <Link to="/pasillo2"><img src={flecha} /></Link>
                     </div>
                     <div>
-                        <button onClick={openModal2}>Tarea</button>
+                        <button onClick={openModal2}><img src={reactor_t2} className="img_reactor_t2"/></button>
                         <Modal isOpen={isOpenM} closeModal={closeModal2} className="modal2_rea">
                             <img src={map_x} className="img_modal-xr" onClick={closeModal2} />
                             <UnlockManifolds />
@@ -68,9 +70,9 @@ export const Reactor = () => {
                     </div>
 
                     <div>
-                        <button onClick={openModal3}>Tarea2</button>
-                        <Modal isOpen={isOpenM2} closeModal={closeModal3} onRequestClose={() => setIsOpenM2(false)} className="modal">
-                            {/* <img src={map_x} className="img_modal-x" onClick={closeModal3} /> */}
+                        <button onClick={openModal3}><img src={reactor_t1} className="img_reactor_t1" /></button>
+                        <Modal isOpen={isOpenM2} closeModal={closeModal3} className="modal">
+                            <img src={map_x} className="img_modal-xrea2" onClick={closeModal3} />
                             <StartReactor />
                         </Modal>
                     </div>

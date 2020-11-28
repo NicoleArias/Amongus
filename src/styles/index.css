@@ -745,6 +745,25 @@ li a:focus{
     position: absolute;
     width: 3.5%;
 }
+.img_modal-xrea2{
+    margin-top: 2%;
+    position: absolute;
+    width: 4.5%;
+}
+.img_reactor_t2{
+    cursor: pointer;
+    margin-top: -26.2%;
+    margin-left: -3.3%;
+    position: absolute;
+    width: 2%;
+}
+.img_reactor_t1{
+    cursor: pointer;
+    margin-left: -0.6%;
+    margin-top: -14.6%;
+    position: absolute;
+    width: 3.7%;
+}
 
 
 /* -----------------------------------------------SEGURIDAD--------------------------------------- */
